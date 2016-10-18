@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>动态</title>
+		<!--告诉IE是否使用最新的版本渲染页面-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1 user-scalable=no">
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="stylesheet" href="libs/sm.min.css">
+
+		<style type="text/css">
+			#btn-title {
+				width: 40%;
+				margin: 0 auto;
+			}
+			#ab-page,#dt-page,#msg-page{
+				transform: none !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="page-group">
+	<!--消息页面-->
+			<div class="page page-current" id="msg-page">
+				<!--导航栏-->
+				<header class="bar bar-nav">
+					<a href="#" class="icon icon-me pull-left"></a>
+					<button class="button button-link button-nav pull-right">
+					   <b>+</b>				
+					</button>
+					<div id="btn-title" class="buttons-row">
+						<a href="#" class="tab-link active button ">消息</a>
+						<a href="#" class="tab-link button ">电话</a>
+					</div>
+				</header>
+				<!--工具栏-->
+				<nav class="bar bar-tab">
+					<a href="#" class="tab-item active">
+						<span class="icon icon-message"></span>
+						<span class="tab-label">消息</span>
+						<span class="badge">99+</span>
+					</a>
+					<a href="#ab-page" class="tab-item">
+						<span class="icon icon-friends"></span>
+						<sppan class="tab-label">联系人</sppan>
+					</a>
+					<a href="#dt-page" class="tab-item">
+						<span class="icon icon-star"></span>
+						<sppan class="tab-label">动态</sppan>
+					</a>
+				</nav>
+				<!--内容区-->
+				<div class="content">
+					<div class="content-block">
+						这是显示好友消息的页面
+					</div>
+				</div>
+
+			</div>
+
+	<!--联系人页面-->
+			<div class="page" id="ab-page">
+				<!--导航栏-->
+				<header class="bar bar-nav">
+					<a href="#" class="icon icon-me pull-left"></a>
+					<a href="#" class="button button-link button-nav pull-right" data-transition='slide-out'>
+						添加
+					</a>					
+					<h1 class="title">联系人</h1>
+				</header>
+				<!--工具栏-->
+				<nav class="bar bar-tab">
+					<a href="#msg-page" class="tab-item">
+						<span class="icon icon-message"></span>
+						<span class="tab-label">消息</span>
+					</a>
+					<a href="#" class="tab-item active">
+						<span class="icon icon-friends"></span>
+						<sppan class="tab-label">联系人</sppan>
+					</a>
+					<a href="#dt-page" class="tab-item">
+						<span class="icon icon-star"></span>
+						<sppan class="tab-label">动态</sppan>
+					</a>
+				</nav>
+
+				<!--内容区-->
+				<div class="content">
+					<div class="content-block">
+						这是显示联系人的页面
+					</div>
+				</div>
+			</div>
+	<!--动态页面-->
+			<div class="page" id="dt-page">
+				<!--导航栏-->
+				<header class="bar bar-nav">
+					<a href="#" class="icon icon-me pull-left"></a>
+					<a class="button button-link button-nav pull-right" href="#" data-transition='slide-out'>
+						更多
+					</a>
+					<h1 class="title">动态</h1>
+				</header>
+				<!--工具栏-->
+				<nav class="bar bar-tab">
+					<a href="#msg-page" class="tab-item">
+						<span class="icon icon-message"></span>
+						<span class="tab-label">消息</span>
+					</a>
+					<a href="#ab-page" class="tab-item">
+						<span class="icon icon-friends"></span>
+						<sppan class="tab-label">联系人</sppan>
+					</a>
+					<a href="" class="tab-item  active">
+						<span class="icon icon-star"></span>
+						<sppan class="tab-label">动态</sppan>
+					</a>
+				</nav>
+				<!--内容区-->
+				<div class="content">
+					<div class="content-block">
+						这是显示动态的页面
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="panel panel-left" id="info-panel">
+				<div class="content-block">
+					<p>这是一个侧栏</p>
+				</div>
+			</div>
+			
+		</div>
+
+		<script type='text/javascript' src='libs/zepto.min.js' charset='utf-8'></script>
+		<script type='text/javascript' src='libs/sm.min.js' charset='utf-8'></script>
+		<script>			
+			// URL中第一个#后面的字符串是URL的hash值；hash值不会随请求发送到服务器，仅仅是指导浏览器当页面加载完成时显示页面的哪个部分
+			//window.location.hash可以访问当前页面的hash值
+			//window.onhashchange事件可以监听hash变化		
+			
+			
+			
+			
+			
+			$(document).on("pageInit","#msg-page",function(e,pageId,$page){
+				//设置浏览器title
+				document.title="消息"
+			});
+			$(document).on("pageInit","#ab-page",function(e,pageId,$page){
+				//设置浏览器title
+				document.title="联系人"
+			});
+			$(document).on("pageInit","#dt-page",function(e,pageId,$page){
+				//设置浏览器title
+				document.title="动态"
+			});
+			
+			
+			
+			
+			//初始化SUI
+			$.init();
+		</script>
+	</body>
+
+</html>
