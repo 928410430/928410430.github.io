@@ -27,7 +27,7 @@
 			<div class="page page-current" id="msg-page">
 				<!--导航栏-->
 				<header class="bar bar-nav">
-					<a href="#" class="icon icon-me pull-left "></a>
+					<a href="#" class="icon icon-me pull-left open-panel" data-panel="#info-panel"></a>
 					<button class="button button-link button-nav pull-right">
 					   <b>+</b>				
 					</button>
@@ -53,7 +53,7 @@
 					</a>
 				</nav>
 				<!--内容区-->
-				<div class="content">
+				<div class="content close-panel">
 					<div class="content-block">
 						这是显示好友消息的页面
 					</div>
@@ -126,14 +126,12 @@
 					</div>
 				</div>
 			</div>
-			
-			
-			<div class="panel panel-left" id="info-panel">
+						
+			<div class="panel panel-left  panel-reveal" id="info-panel">
 				<div class="content-block">
 					<p>这是一个侧栏</p>
 				</div>
-			</div>
-			
+			</div>			
 		</div>
 
 		<script type='text/javascript' src='libs/zepto.min.js' charset='utf-8'></script>
