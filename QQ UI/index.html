@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8">
 		<title>动态</title>
@@ -14,16 +15,60 @@
 				width: 40%;
 				margin: 0 auto;
 			}
-			#ab-page,#dt-page,#msg-page{
+			
+			#ab-page,
+			#dt-page,
+			#msg-page {
 				animation: none !important;
 				-webkit-animation: none !important;
 			}
+			
+			#self-head {
+				width: 4rem;
+				height: 4rem;
+				border-radius: 50%;
+				float: left;
+			}
+			
+			#self-name {
+				float: left;
+			}
+			/*#self-info:after{
+				clear: both;
+				
+			}*/
+			#list-ul:before,#list-ul:after{content:normal}
+			.item-inner:before,.item-inner:after{content: normal!important;}
+			
+			#bottom-menu{
+				font-size: 0.7rem;
+				margin-top: 4rem;
+			}
+			#bottom-menu a{
+				color: gray!important;
+			}
+			
+			#aside-menu{
+				height: 14rem;
+				overflow: auto;
+			}
+			
+			#friend-list{
+				margin: 0;
+			}
+			#friend-list .item-media img{
+				width: 3rem !important;
+				/*height: 2rem;*/
+				border-radius: 50%;
+			}
+			
+			
 		</style>
 	</head>
 
 	<body>
 		<div class="page-group">
-	<!--消息页面-->
+			<!--消息页面-->
 			<div class="page page-current" id="msg-page">
 				<!--导航栏-->
 				<header class="bar bar-nav">
@@ -36,6 +81,15 @@
 						<a href="#" class="tab-link button ">电话</a>
 					</div>
 				</header>
+				<div class="bar bar-header-secondary">
+					<div class="searchbar">
+						<a class="searchbar-cancel">取消</a>
+						<div class="search-input">
+							<label class="icon icon-search" for="search"></label>
+							<input type="search" id='search' placeholder='输入关键字...' />
+						</div>
+					</div>
+				</div>
 				<!--工具栏-->
 				<nav class="bar bar-tab">
 					<a href="#" class="tab-item active">
@@ -54,21 +108,30 @@
 				</nav>
 				<!--内容区-->
 				<div class="content close-panel">
-					<div class="content-block">
-						这是显示好友消息的页面
-					</div>
+					<div class="list-block media-list" id="friend-list">
+					    <ul>
+					      <li>
+					        <a href="#" class="item-link item-content">
+					          <div class="item-media"><img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg" style='width: 4rem;'></div>
+					          <div class="item-inner">					   
+					            <div class="item-subtitle">标题</div>
+					            <div class="item-text">此处是文本内容...</div>
+					          </div>
+					        </a>
+					      </li>
+					    </ul>
+					  </div>
 				</div>
-
 			</div>
 
-	<!--联系人页面-->
+			<!--联系人页面-->
 			<div class="page" id="ab-page">
 				<!--导航栏-->
 				<header class="bar bar-nav">
-					<a href="#" class="icon icon-me pull-left"></a>
+					<a href="#" class="icon icon-me pull-left open-panel" data-panel="#info-panel"></a>
 					<a href="#" class="button button-link button-nav pull-right" data-transition='slide-out'>
 						添加
-					</a>					
+					</a>
 					<h1 class="title">联系人</h1>
 				</header>
 				<!--工具栏-->
@@ -88,17 +151,80 @@
 				</nav>
 
 				<!--内容区-->
-				<div class="content">
-					<div class="content-block">
-						这是显示联系人的页面
-					</div>
+				<div class="content close-panel">
+					 <div class="list-block contacts-block">
+					    <div class="list-group">
+					      <ul>
+					        <li onclick="openclose(event)" class="list-group-title">A</li>
+					        <li>
+					          <div class="item-content">
+					            <div class="item-inner">
+					              <div class="item-title">标题1</div>
+					            </div>
+					          </div>
+					        </li>
+					        <li>
+					          <div class="item-content">
+					            <div class="item-inner">
+					              <div class="item-title">标题2</div>
+					            </div>
+					          </div>
+					        </li>
+					        <li>
+					          <div class="item-content">
+					            <div class="item-inner">
+					              <div class="item-title">标题3</div>
+					            </div>
+					          </div>
+					        </li>
+					        <li>
+					          <div class="item-content">
+					            <div class="item-inner">
+					              <div class="item-title">标题4</div>
+					            </div>
+					          </div>
+					        </li>
+					      </ul>
+					      <ul>
+					        <li onclick="openclose(event)" class="list-group-title">B</li>
+					        <li>
+					          <div class="item-content">
+					            <div class="item-inner">
+					              <div class="item-title">标题1</div>
+					            </div>
+					          </div>
+					        </li>
+					        <li>
+					          <div class="item-content">
+					            <div class="item-inner">
+					              <div class="item-title">标题2</div>
+					            </div>
+					          </div>
+					        </li>
+					        <li>
+					          <div class="item-content">
+					            <div class="item-inner">
+					              <div class="item-title">标题3</div>
+					            </div>
+					          </div>
+					        </li>
+					        <li>
+					          <div class="item-content">
+					            <div class="item-inner">
+					              <div class="item-title">标题4</div>
+					            </div>
+					          </div>
+					        </li>
+					      </ul>
+					    </div>					   
+					    </div>
 				</div>
 			</div>
-	<!--动态页面-->
+			<!--动态页面-->
 			<div class="page" id="dt-page">
 				<!--导航栏-->
 				<header class="bar bar-nav">
-					<a href="#" class="icon icon-me pull-left"></a>
+					<a href="#" class="icon icon-me pull-left open-panel" data-panel="#info-panel"></a>
 					<a class="button button-link button-nav pull-right" href="#" data-transition='slide-out'>
 						更多
 					</a>
@@ -120,47 +246,167 @@
 					</a>
 				</nav>
 				<!--内容区-->
-				<div class="content">
+				<div class="content close-panel">
 					<div class="content-block">
 						这是显示动态的页面
 					</div>
 				</div>
 			</div>
-						
-			<div class="panel panel-left  panel-reveal" id="info-panel">
+
+			<!--侧边栏-->
+			<div class="theme-white panel panel-left  panel-reveal" id="info-panel">
 				<div class="content-block">
-					<p>这是一个侧栏</p>
+					<!--个人信息-->
+					<div id="self-info">
+						<!--头像-->
+						<img id="self-head" src="img/2.JPG" />
+						<!--昵称-->
+						<span id="self-name">Tracy</span>
+						<br />
+						<!--等级-->
+						<div id="self-level"></div>
+						<div style="clear: both;"></div>
+						<p style="font-size: 0.6rem;">你是猴子请来的救兵吗？</p>
+					</div>
+					<!--菜单列表-->
+					<div class="list-block" id="aside-menu" style="margin: 1rem 0; font-size: 0.8rem;">
+						<ul id="list-ul">
+							<li class="item-content">
+								<div class="item-media"><i class="icon icon-gift"></i></div>
+								<div class="item-inner">
+									<div class="item-title">了解会员特权</div>
+								</div>
+							</li>
+							<li class="item-content">
+								<div class="item-media"><i class="icon icon-cart"></i></div>
+								<div class="item-inner">
+									<div class="item-title">QQ钱包</div>
+								</div>
+							</li>
+							<li class="item-content">
+								<div class="item-media"><i class="icon icon-emoji"></i></div>
+								<div class="item-inner">
+									<div class="item-title">个性装扮</div>
+								</div>
+							</li>
+							<li class="item-content">
+								<div class="item-media"><i class="icon icon-star"></i></div>
+								<div class="item-inner">
+									<div class="item-title">我的收藏</div>
+								</div>
+							</li>
+							<li class="item-content">
+								<div class="item-media"><i class="icon icon-picture"></i></div>
+								<div class="item-inner">
+									<div class="item-title">我的相册</div>
+								</div>
+							</li>
+							<li class="item-content">
+								<div class="item-media"><i class="icon icon-menu"></i></div>
+								<div class="item-inner">
+									<div class="item-title">我的文件</div>
+								</div>
+							</li>
+							<li class="item-content">
+								<div class="item-media"><i class="icon icon-card"></i></div>
+								<div class="item-inner">
+									<div class="item-title">我的名片夹</div>
+								</div>
+							</li>
+						</ul>
+
+					</div>					
+			<!--设置 夜间模式-->
+					<div class="row" id="bottom-menu">
+					    <div class="col-33"><a href="#" class="button-link"><i class="icon icon-settings"></i>设置</a></div>
+					    <div class="col-33"><a id="night-shift-btn" href="#" class="button-link"><i class="icon icon-star"></i>夜间</a></div>
+					    <div class="col-33"><a href="#" class="button-link">郑州<sup>18℃</sup></a></div>
+					 </div>		
 				</div>
-			</div>			
+			</div>
 		</div>
 
 		<script type='text/javascript' src='libs/zepto.min.js' charset='utf-8'></script>
 		<script type='text/javascript' src='libs/sm.min.js' charset='utf-8'></script>
-		<script>			
+		<script>
 			// URL中第一个#后面的字符串是URL的hash值；hash值不会随请求发送到服务器，仅仅是指导浏览器当页面加载完成时显示页面的哪个部分
 			//window.location.hash可以访问当前页面的hash值
 			//window.onhashchange事件可以监听hash变化		
-			
-			
-			
-			
-			
-			$(document).on("pageInit","#msg-page",function(e,pageId,$page){
+
+			$(document).on("pageInit", "#msg-page", function(e, pageId, $page) {
 				//设置浏览器title
-				document.title="消息"
+				document.title = "消息"
 			});
-			$(document).on("pageInit","#ab-page",function(e,pageId,$page){
+			$(document).on("pageInit", "#ab-page", function(e, pageId, $page) {
 				//设置浏览器title
-				document.title="联系人"
+				document.title = "联系人"
 			});
-			$(document).on("pageInit","#dt-page",function(e,pageId,$page){
+			$(document).on("pageInit", "#dt-page", function(e, pageId, $page) {
 				//设置浏览器title
-				document.title="动态"
+				document.title = "动态"
 			});
+
+			var mylevel = 48;
+
+			function refreshLevel(level) {
+				var levArray = [];
+				while(level / 4 >= 1) {
+					var remainder = level % 4;
+					levArray.unshift(remainder);
+					level = Math.floor(level / 4);
+				}
+				levArray.unshift(level);
+				console.log(levArray)
+				for(var i = 0; i < levArray.length; i++) {
+					var picName;
+					switch(levArray.length - i) {
+						case 3:
+							picName = "sun.png"
+							break;
+						case 2:
+							picName = "moon.png"
+							break;
+						case 1:
+							picName = "start.png"
+							break;
+						default:
+							break;
+					}
+					for(var j = 0; j < levArray[i]; j++) {
+						$("<img/>")
+							.attr("src", "img/" + picName)
+							.css("width", "0.7rem")
+							.css("height", "0.7rem")
+							.appendTo($("#self-level"))
+					}
+				}
+			}
+			refreshLevel(mylevel)
+
+
+			//夜间模式切换
+			$("#night-shift-btn").click(function(){
+				$(document.body).toggleClass("theme-dark")
+				$("#info-panel").toggleClass("theme-white")
+			})
+
+			//联系人菜单打开关闭
+			function openclose(e){
+				if(e.target.isOpen){
+					$(e.target).nextAll("li")
+					.css("display","none")
+					e.target.isOpen=false;
+				}else{
+					$(e.target).nextAll("li")
+					.css("display","block")
+					e.target.isOpen=true;
+				}
+				
+			}
 			
 			
-			
-			
+
+
 			//初始化SUI
 			$.init();
 		</script>
