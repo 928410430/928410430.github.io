@@ -16,9 +16,9 @@
 //		console.dir(navigator.geolocation)
 		navigator.geolocation.getCurrentPosition(function(position){
 			//获取纬度
-			lat.innerHTML=position.coords.latitude;
+			lat.innerHTML="纬度"+ position.coords.latitude;
 			//获取经度
-			lon.innerHTML = position.coords.longitude
+			lon.innerHTML ="经度"+ position.coords.longitude
 		})
 	</script>
 	
