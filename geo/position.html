@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="latitude"></p>
+		<p id="longitude"></p>
+	</body>
+	<script>
+		
+		var lat = document.getElementById("latitude")
+		var lon = document.getElementById("longitude")
+		
+//		console.dir(navigator.geolocation)
+		navigator.geolocation.getCurrentPosition(function(position){
+			//获取纬度
+			lat.innerHTML=position.coords.latitude;
+			//获取经度
+			lon.innerHTML = position.coords.longitude
+		})
+	</script>
+	
+	
+</html>
